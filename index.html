@@ -11,7 +11,13 @@
 <body>
     <p id="test"> This is a test </p>
     <script>
-        fetch('https://e9aa-207-183-239-54.ngrok.io/get')
+        fetch('http://127.0.0.1:5000/get', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Secret': 'gem5isthebestlikenooneevencomesclose'
+            },
+        })
             .then(response => response.json())
             .then(json => {
                 document.getElementById("test").innerHTML = json.success;
